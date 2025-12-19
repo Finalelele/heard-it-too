@@ -369,62 +369,16 @@ end
 local Tab = Window:CreateTab("Get spirits", 4483362458) -- Title, Image
 local Section = Tab:CreateSection("one time collect")
 local Button = Tab:CreateButton({
-   Name = "Get spirits 1 time",
+   Name = "Spirits autocollect (lag)",
    Callback = function()
 	for _,v in pairs (workspace:GetDescendants()) do
-		if v.Name == "SpiritsOLDROBLOX"  then
-			local spiritsOLD = workspace.SpiritsOLDROBLOX
-			for _,v in pairs (spiritsOLD:GetDescendants()) do
-				if v:IsA("BasePart") then
+		if v.Name == "SpiritsOLDROBLOX" or v.Name == "SpiritsSCHOOL" or v.Name == "SpiritsCITY" or v.Name == "SpiritsGRASSMAZE" or v.Name == "SpiritsHAUNTEDMANSION" or v.Name == "SpiritsCLASSICIHIT" or v.Name == "SpiritsMALL" or v.Name == "SpiritsSEWER" or v.Name == "SpiritsCONSTRUCTION"then
+			for _,child in pairs(v:GetDescendants()) do
+                if child.Name == "Spirit" then
 					wait()
-					v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-				end
-			end
-		end
-		if v.Name == "SpiritsSCHOOL"  then
-			local spiritsSC = workspace.SpiritsSCHOOL
-			for _,v in pairs (spiritsSC:GetDescendants()) do
-				if v:IsA("BasePart") then
-					wait()
-					v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-				end
-			end
-		end
-		if v.Name == "SpiritsCITY"  then
-			local spiritsCITY = workspace.SpiritsCITY
-			for _,v in pairs (spiritsCITY:GetDescendants()) do
-				if v:IsA("BasePart") then
-					wait()
-					v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-				end
-			end
-		end
-		if v.Name == "SpiritsGRASSMAZE"  then
-			local spiritsMAZE = workspace.SpiritsGRASSMAZE
-			for _,v in pairs (spiritsMAZE:GetDescendants()) do
-				if v:IsA("BasePart") then
-					wait()
-					v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-				end
-			end
-		end
-		if v.Name == "SpiritsHAUNTEDMANSION"  then
-			local spiritsMansion = workspace.SpiritsHAUNTEDMANSION
-			for _,v in pairs (spiritsMansion:GetDescendants()) do
-				if v:IsA("BasePart") then
-					wait()
-					v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-				end
-			end
-		end
-		if v.Name == "SpiritsCLASSICIHIT"  then
-			local spiritsIhit = workspace.SpiritsCLASSICIHIT
-			for _,v in pairs (spiritsIhit:GetDescendants()) do
-				if v:IsA("BasePart") then
-					wait()
-					v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-				end
-			end
+                    child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                end
+            end
 		end
 	end
 end,
